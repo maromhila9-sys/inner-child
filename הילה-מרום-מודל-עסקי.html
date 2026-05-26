@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>הילה מרום | מודל עסקי - שיטת התיקון</title>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --pistachio: #A8C97F;
+  --pistachio-light: #C7DCAB;
+  --pistachio-dark: #6B8E4E;
+  --pistachio-bg: #EDF3E2;
+  --black: #1C1917;
+  --black-soft: #2C2A26;
+  --gold: #C9A961;
+  --gold-dark: #A88947;
+  --gold-light: #E5CC8F;
+  --cream: #FAF8F4;
+  --cream-warm: #F5F1E8;
+  --text: #1C1917;
+  --text-muted: #6B6863;
+  --border: rgba(28, 25, 23, 0.08);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Heebo', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 16px;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2, h3, h4 { font-family: 'Heebo', sans-serif; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; }
+.serif { font-family: 'Cormorant Garamond', serif; font-weight: 500; }
+
+/* Layout */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.section { padding: 100px 0; }
+.section-tight { padding: 60px 0; }
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, var(--black) 0%, #0a0908 100%);
+  color: var(--cream);
+  min-height: 95vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%; right: -20%;
+  width: 800px; height: 800px;
+  background: radial-gradient(circle, var(--pistachio) 0%, transparent 60%);
+  opacity: 0.15;
+  filter: blur(80px);
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -30%; left: -10%;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, var(--gold) 0%, transparent 60%);
+  opacity: 0.12;
+  filter: blur(70px);
+}
+.hero-content { position: relative; z-index: 2; max-width: 900px; }
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--gold-light); font-weight: 500;
+  padding: 10px 20px;
+  background: rgba(201, 169, 97, 0.08);
+  border: 1px solid rgba(201, 169, 97, 0.25);
+  border-radius: 100px;
+  margin-bottom: 32px;
+}
+.hero-eyebrow svg { width: 16px; height: 16px; }
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(48px, 7vw, 88px);
+  font-weight: 500;
+  line-height: 1.05;
+  margin-bottom: 28px;
+  letter-spacing: -0.01em;
+}
+.hero h1 .accent { color: var(--pistachio); font-style: italic; }
+.hero h1 .gold-text { color: var(--gold-light); }
+.hero-sub {
+  font-size: clamp(18px, 2vw, 22px);
+  color: rgba(250, 248, 244, 0.75);
+  font-weight: 300;
+  max-width: 720px;
+  margin-bottom: 48px;
+}
+.hero-meta {
+  display: flex; flex-wrap: wrap; gap: 32px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(250, 248, 244, 0.12);
+}
+.hero-meta-item { font-size: 14px; color: rgba(250, 248, 244, 0.6); }
+.hero-meta-item strong { display: block; color: var(--pistachio); font-size: 28px; font-weight: 700; margin-bottom: 4px; font-family: 'Heebo', sans-serif; }
+
+/* Section headers */
+.section-header { max-width: 800px; margin: 0 auto 64px; text-align: center; }
+.section-eyebrow {
+  display: inline-block;
+  font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold-dark); font-weight: 600;
+  margin-bottom: 16px;
+}
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 500;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+.section-title .italic { font-style: italic; color: var(--pistachio-dark); }
+.section-sub { font-size: 18px; color: var(--text-muted); font-weight: 300; }
+
+/* Brand identity card */
+.brand-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  box-shadow: 0 4px 24px rgba(28, 25, 23, 0.04);
+}
+.brand-logo {
+  text-align: center;
+  padding: 48px 32px;
+  background: linear-gradient(135deg, var(--black) 0%, #2c2a26 100%);
+  border-radius: 16px;
+  color: var(--cream);
+  position: relative;
+  overflow: hidden;
+}
+.brand-logo::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 70% 30%, var(--pistachio) 0%, transparent 50%);
+  opacity: 0.18;
+}
+.brand-logo-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px; font-weight: 500; font-style: italic;
+  color: var(--cream); position: relative;
+}
+.brand-logo-method {
+  font-family: 'Heebo', sans-serif;
+  font-size: 11px; letter-spacing: 0.35em; text-transform: uppercase;
+  color: var(--pistachio); margin-top: 12px; font-weight: 500;
+  position: relative;
+}
+.brand-logo-line {
+  width: 60px; height: 1px;
+  background: var(--gold);
+  margin: 16px auto;
+  position: relative;
+}
+.brand-details h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px; font-weight: 500;
+  margin-bottom: 24px; color: var(--black);
+}
+.brand-row { padding: 16px 0; border-bottom: 1px solid var(--border); }
+.brand-row:last-child { border-bottom: none; }
+.brand-row-label { font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-dark); font-weight: 600; margin-bottom: 4px; }
+.brand-row-value { font-size: 16px; color: var(--text); font-weight: 500; }
+
+/* Avatar / Persona */
+.persona-card {
+  background: linear-gradient(135deg, var(--pistachio-bg) 0%, var(--cream-warm) 100%);
+  border-radius: 24px;
+  padding: 56px;
+  position: relative;
+  overflow: hidden;
+}
+.persona-card::before {
+  content: '"';
+  position: absolute;
+  top: -60px; right: 40px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 320px;
+  color: var(--pistachio);
+  opacity: 0.25;
+  line-height: 1;
+}
+.persona-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(24px, 3vw, 34px);
+  font-style: italic;
+  color: var(--black);
+  margin-bottom: 40px;
+  font-weight: 500;
+  line-height: 1.4;
+  position: relative;
+}
+.persona-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 24px;
+  position: relative;
+}
+.persona-item {
+  background: rgba(255, 255, 255, 0.6);
+  padding: 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+.persona-item-label { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--pistachio-dark); font-weight: 600; margin-bottom: 6px; }
+.persona-item-value { font-size: 15px; color: var(--black); font-weight: 500; }
+
+/* Product Ladder */
+.ladder { position: relative; }
+.ladder::before {
+  content: '';
+  position: absolute;
+  right: 50px;
+  top: 60px;
+  bottom: 60px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--pistachio) 0%, var(--gold) 50%, var(--black) 100%);
+}
+.product-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 36px;
+  margin-bottom: 24px;
+  display: grid;
+  grid-template-columns: 80px 1fr 280px;
+  gap: 32px;
+  position: relative;
+  transition: all 250ms ease;
+  align-items: start;
+}
+.product-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(28, 25, 23, 0.08);
+  border-color: var(--pistachio);
+}
+.product-step {
+  width: 60px; height: 60px;
+  background: var(--black);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px; font-weight: 500;
+  color: var(--pistachio);
+  position: relative;
+  z-index: 2;
+  border: 3px solid var(--cream);
+  box-shadow: 0 0 0 2px var(--pistachio);
+}
+.product-card:nth-child(2) .product-step { background: var(--pistachio); color: var(--black); box-shadow: 0 0 0 2px var(--pistachio-dark); }
+.product-card:nth-child(3) .product-step { background: var(--pistachio-dark); color: var(--cream); box-shadow: 0 0 0 2px var(--gold); }
+.product-card:nth-child(4) .product-step { background: var(--gold); color: var(--black); box-shadow: 0 0 0 2px var(--gold-dark); }
+.product-card:nth-child(5) .product-step { background: var(--black-soft); color: var(--gold-light); box-shadow: 0 0 0 2px var(--gold); }
+
+.product-info h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px; font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--black);
+}
+.product-tagline { font-size: 13px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-dark); font-weight: 600; margin-bottom: 18px; }
+.product-desc { color: var(--text-muted); font-size: 15px; margin-bottom: 16px; }
+.product-features {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-top: 16px;
+}
+.product-feature {
+  background: var(--pistachio-bg);
+  color: var(--pistachio-dark);
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.product-pricing {
+  background: linear-gradient(135deg, var(--cream-warm) 0%, var(--pistachio-bg) 100%);
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  border: 1px solid var(--border);
+}
+.price-label { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); font-weight: 600; margin-bottom: 8px; }
+.price-main {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px;
+  font-weight: 600;
+  color: var(--black);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.price-main .currency { font-size: 24px; color: var(--gold-dark); vertical-align: super; }
+.price-eb { font-size: 13px; color: var(--pistachio-dark); font-weight: 600; }
+.price-eb .strike { text-decoration: line-through; color: var(--text-muted); }
+.price-free { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-style: italic; color: var(--pistachio-dark); font-weight: 500; }
+
+/* Revenue calc */
+.calc-grid {
+  background: linear-gradient(135deg, var(--black) 0%, var(--black-soft) 100%);
+  border-radius: 24px;
+  padding: 56px;
+  color: var(--cream);
+  position: relative;
+  overflow: hidden;
+}
+.calc-grid::before {
+  content: '';
+  position: absolute;
+  top: -40%; left: -20%;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, var(--pistachio) 0%, transparent 60%);
+  opacity: 0.1;
+  filter: blur(80px);
+}
+.calc-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 40px; font-weight: 500;
+  text-align: center; margin-bottom: 40px;
+  position: relative;
+}
+.calc-title .gold { color: var(--gold-light); font-style: italic; }
+.calc-rows { display: flex; flex-direction: column; gap: 12px; position: relative; }
+.calc-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 24px;
+  padding: 18px 24px;
+  background: rgba(250, 248, 244, 0.04);
+  border: 1px solid rgba(250, 248, 244, 0.08);
+  border-radius: 12px;
+  align-items: center;
+}
+.calc-row-product { font-weight: 500; color: var(--cream); }
+.calc-row-product small { color: var(--gold-light); font-weight: 400; display: block; font-size: 13px; margin-top: 2px; }
+.calc-row-qty { color: var(--pistachio); font-size: 15px; }
+.calc-row-amount { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--gold-light); font-weight: 600; text-align: left; direction: ltr; }
+.calc-total {
+  margin-top: 24px;
+  padding: 24px;
+  background: var(--pistachio);
+  color: var(--black);
+  border-radius: 12px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+  position: relative;
+}
+.calc-total-label { font-size: 18px; font-weight: 700; }
+.calc-total-label small { display: block; font-size: 13px; font-weight: 400; color: var(--black-soft); margin-top: 4px; }
+.calc-total-amount { font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 700; text-align: left; direction: ltr; }
+
+/* Benefits bank */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+.benefit-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  transition: all 250ms ease;
+  position: relative;
+}
+.benefit-card:hover {
+  border-color: var(--pistachio);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(28, 25, 23, 0.06);
+}
+.benefit-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px; font-weight: 500; font-style: italic;
+  color: var(--pistachio); line-height: 1;
+  margin-bottom: 12px;
+}
+.benefit-text { font-size: 15px; color: var(--black); line-height: 1.6; font-weight: 500; }
+
+/* Scripts */
+.scripts-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+.script-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-right: 4px solid var(--pistachio);
+  border-radius: 16px;
+  padding: 36px;
+  position: relative;
+}
+.script-card:nth-child(2) { border-right-color: var(--gold); }
+.script-card:nth-child(3) { border-right-color: var(--black); }
+.script-tag {
+  display: inline-block;
+  background: var(--pistachio-bg);
+  color: var(--pistachio-dark);
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+}
+.script-card:nth-child(2) .script-tag { background: rgba(201, 169, 97, 0.15); color: var(--gold-dark); }
+.script-card:nth-child(3) .script-tag { background: rgba(28, 25, 23, 0.08); color: var(--black); }
+.script-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px; font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--black);
+}
+.script-meta { font-size: 13px; color: var(--text-muted); margin-bottom: 24px; }
+.script-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+  font-style: italic;
+  color: var(--black-soft);
+  line-height: 1.7;
+  padding: 24px;
+  background: var(--cream-warm);
+  border-radius: 12px;
+  position: relative;
+}
+.script-quote::before {
+  content: '"';
+  position: absolute;
+  top: 0; right: 16px;
+  font-size: 60px;
+  color: var(--pistachio);
+  font-family: 'Cormorant Garamond', serif;
+  opacity: 0.4;
+  line-height: 1;
+}
+.script-quote strong { color: var(--pistachio-dark); font-weight: 700; font-style: normal; }
+.script-tip {
+  margin-top: 16px;
+  padding: 12px 16px;
+  background: var(--pistachio-bg);
+  border-radius: 8px;
+  font-size: 13px;
+  color: var(--pistachio-dark);
+  font-weight: 500;
+}
+
+/* Timeline 90 days */
+.timeline {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.timeline-month {
+  background: white;
+  border-radius: 20px;
+  padding: 36px;
+  border: 1px solid var(--border);
+  position: relative;
+  transition: all 250ms ease;
+}
+.timeline-month:hover {
+  border-color: var(--pistachio);
+  transform: translateY(-2px);
+}
+.timeline-month::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 36px;
+  width: 40px; height: 4px;
+  background: var(--pistachio);
+  border-radius: 0 0 4px 4px;
+}
+.timeline-month:nth-child(2)::before { background: var(--gold); }
+.timeline-month:nth-child(3)::before { background: var(--black); }
+.timeline-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 72px;
+  font-weight: 600;
+  color: var(--pistachio-bg);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.timeline-month:nth-child(2) .timeline-num { color: rgba(201, 169, 97, 0.2); }
+.timeline-month:nth-child(3) .timeline-num { color: rgba(28, 25, 23, 0.08); }
+.timeline-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px; font-weight: 600;
+  margin-bottom: 24px; color: var(--black);
+}
+.timeline-tasks { list-style: none; }
+.timeline-task {
+  padding: 10px 0;
+  padding-right: 28px;
+  position: relative;
+  font-size: 14px;
+  color: var(--text);
+  border-bottom: 1px dashed var(--border);
+}
+.timeline-task:last-child { border-bottom: none; }
+.timeline-task::before {
+  content: '';
+  position: absolute;
+  right: 0; top: 16px;
+  width: 16px; height: 16px;
+  border: 2px solid var(--pistachio);
+  border-radius: 4px;
+}
+.timeline-goal {
+  margin-top: 20px;
+  padding: 14px 18px;
+  background: var(--pistachio-bg);
+  border-radius: 10px;
+  font-size: 13px;
+  color: var(--pistachio-dark);
+  font-weight: 600;
+}
+.timeline-goal strong { display: block; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 4px; color: var(--pistachio-dark); }
+
+/* Pricing principle */
+.principle-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+.principle-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  text-align: center;
+}
+.principle-icon {
+  width: 56px; height: 56px;
+  background: var(--pistachio-bg);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 20px;
+  color: var(--pistachio-dark);
+}
+.principle-icon svg { width: 28px; height: 28px; }
+.principle-title { font-size: 18px; font-weight: 700; margin-bottom: 8px; color: var(--black); }
+.principle-text { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+/* CTA Footer */
+.cta-section {
+  background: linear-gradient(135deg, var(--black) 0%, #0a0908 100%);
+  color: var(--cream);
+  padding: 100px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px; height: 800px;
+  background: radial-gradient(circle, var(--pistachio) 0%, transparent 60%);
+  opacity: 0.12;
+  filter: blur(100px);
+}
+.cta-content { position: relative; z-index: 2; max-width: 700px; margin: 0 auto; }
+.cta-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 500;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+.cta-title .pistachio { color: var(--pistachio); font-style: italic; }
+.cta-sub { font-size: 18px; color: rgba(250, 248, 244, 0.7); margin-bottom: 40px; font-weight: 300; }
+.cta-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 56px;
+  padding-top: 56px;
+  border-top: 1px solid rgba(250, 248, 244, 0.12);
+}
+.cta-stat-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px;
+  font-weight: 600;
+  color: var(--pistachio);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.cta-stat-label { font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(250, 248, 244, 0.6); }
+
+/* Divider */
+.divider {
+  display: flex; align-items: center; justify-content: center;
+  gap: 16px; margin: 24px 0;
+}
+.divider-line { flex: 1; height: 1px; background: var(--border); max-width: 80px; }
+.divider svg { width: 24px; height: 24px; color: var(--gold); }
+
+/* Pillar / Note */
+.note {
+  background: var(--cream-warm);
+  border-right: 4px solid var(--gold);
+  padding: 24px 28px;
+  border-radius: 12px;
+  margin: 32px 0;
+}
+.note-title { font-weight: 700; color: var(--gold-dark); margin-bottom: 8px; font-size: 15px; }
+.note-text { color: var(--text); font-size: 15px; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .section { padding: 60px 0; }
+  .brand-card { grid-template-columns: 1fr; padding: 32px; gap: 32px; }
+  .product-card { grid-template-columns: 1fr; gap: 20px; padding: 28px; }
+  .ladder::before { display: none; }
+  .calc-row { grid-template-columns: 1fr; gap: 8px; padding: 16px; }
+  .calc-total { grid-template-columns: 1fr; gap: 12px; text-align: center; }
+  .calc-row-amount, .calc-total-amount { text-align: right; }
+  .timeline { grid-template-columns: 1fr; }
+  .persona-card { padding: 32px; }
+  .calc-grid { padding: 32px; }
+  .hero-meta { gap: 20px; }
+}
+
+/* Print */
+@media print {
+  .hero, .cta-section { background: white !important; color: var(--black) !important; }
+  .hero h1, .cta-title { color: var(--black) !important; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+
+/* Accessibility */
+*:focus-visible {
+  outline: 2px solid var(--pistachio-dark);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2v20M2 12h20"/></svg>
+        מודל עסקי | מאי 2026
+      </div>
+      <h1>
+        <span class="serif">הילה מרום</span><br>
+        <span class="accent">שיטת התיקון —</span><br>
+        <span class="gold-text">מסע מציאת האני</span>
+      </h1>
+      <p class="hero-sub">
+        מודל עסקי שלם, בנוי לפי שיטת ניר דובדבני — מותג של מאמנת ומטפלת המעבירה <strong style="color: var(--pistachio); font-weight: 600;">סדנאות בלבד</strong>, בזום ובמפגשים פרונטליים. שני ערוצים: סדנאות לנשים בנות 28-45 במסע מציאת האני, ומסלול ליווי הורים בשיתוף בית הספר למוזיקה אלפא קליד של נאור בר.
+      </p>
+      <div class="hero-meta">
+        <div class="hero-meta-item"><strong>4</strong>סדנאות בסולם המסע</div>
+        <div class="hero-meta-item"><strong>22,937 ₪</strong>הכנסה חודשית יעד</div>
+        <div class="hero-meta-item"><strong>6–8</strong>מפגשים במסלול ההורים</div>
+        <div class="hero-meta-item"><strong>197 ₪</strong>מחיר חדירה ראשון</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRAND IDENTITY -->
+<section class="section" style="background: var(--cream-warm);">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">חלק 1 / זהות המותג</div>
+      <h2 class="section-title">המותג ו<span class="italic">השיום</span></h2>
+      <p class="section-sub">לפי דובדבני: "השיום של תסריטי השיחה מעגן אותם בזיכרון". זה נכון גם לעסק כולו.</p>
+    </div>
+    <div class="brand-card">
+      <div class="brand-logo">
+        <div class="brand-logo-name">הילה מרום</div>
+        <div class="brand-logo-line"></div>
+        <div class="brand-logo-method">שיטת התיקון</div>
+      </div>
+      <div class="brand-details">
+        <h3>זהות המותג</h3>
+        <div class="brand-row">
+          <div class="brand-row-label">שם המותג</div>
+          <div class="brand-row-value">הילה מרום (עצמאי, ללא תלות בריטריט "ואת עלית")</div>
+        </div>
+        <div class="brand-row">
+          <div class="brand-row-label">שם השיטה</div>
+          <div class="brand-row-value">שיטת התיקון — קבלה ופסיכולוגיה למציאת האני</div>
+        </div>
+        <div class="brand-row">
+          <div class="brand-row-label">טאגליין</div>
+          <div class="brand-row-value">"מסע מציאת האני — לנשמה היהודית"</div>
+        </div>
+        <div class="brand-row">
+          <div class="brand-row-label">ההבטחה המרכזית</div>
+          <div class="brand-row-value">תוך 6 שבועות תדעי מי את, מה הדרך שלך ומה התיקון הפנימי שלך</div>
+        </div>
+        <div class="brand-row">
+          <div class="brand-row-label">פורמט</div>
+          <div class="brand-row-value">סדנאות בלבד — בזום ובמפגשים פרונטליים. ללא ריטריטים. ליווי בקבוצות או ביחיד/זוג.</div>
+        </div>
+        <div class="brand-row">
+          <div class="brand-row-label">בידול</div>
+          <div class="brand-row-value">השילוב היחיד של חכמת הקבלה + פסיכולוגיה יהודית + ליווי אישי</div>
+        </div>
+      </div>
+    </div>
+    <div class="note">
+      <div class="note-title">הצגה עצמית של 30 שניות (לפי דובדבני — "פרסונליזציה")</div>
+      <div class="note-text">"הילה מרום, מאמנת ומטפלת אישית, מומחית בשילוב חכמת הקבלה והפסיכולוגיה היהודית. אני מלווה נשים במסע מציאת האני האמיתי, היעוד והתיקון הפנימי. אם את מרגישה תקועה ומחפשת את הדרך שלך — את במקום הנכון."</div>
+    </div>
+  </div>
+</section>
+
+<!-- PERSONA / AVATAR -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">חלק 2 / הלקוחה האידיאלית</div>
+      <h2 class="section-title">"<span class="italic">מיכל</span>" — הלקוחה שמולה את מוכרת</h2>
+      <p class="section-sub">לא קהל רחב. לקוחה אחת ספציפית. כל המסרים, כל המחירים, כל התסריטים — מתואמים אליה.</p>
+    </div>
+    <div class="persona-card">
+      <div class="persona-quote">
+        יש לי הכל מבחוץ — אבל מבפנים אני לא יודעת מי אני, מה הדרך שלי, ואיך לחיות בכנות עם עצמי.
+      </div>
+      <div class="persona-grid">
+        <div class="persona-item">
+          <div class="persona-item-label">גיל</div>
+          <div class="persona-item-value">28 – 45</div>
+        </div>
+        <div class="persona-item">
+          <div class="persona-item-label">מצב משפחתי</div>
+          <div class="persona-item-value">רווקה מחפשת זוגיות / נשואה ואמא</div>
+        </div>
+        <div class="persona-item">
+          <div class="persona-item-label">דת ורוחניות</div>
+          <div class="persona-item-value">מסורתית / דתל"שית / מתחזקת</div>
+        </div>
+        <div class="persona-item">
+          <div class="persona-item-label">תקציב</div>
+          <div class="persona-item-value">200 – 3,000 ₪ למוצר</div>
+        </div>
+        <div class="persona-item">
+          <div class="persona-item-label">הכאב</div>
+          <div class="persona-item-value">תקועה, ריקנות, חוסר זהות</div>
+        </div>
+        <div class="persona-item">
+          <div class="persona-item-label">החלום</div>
+          <div class="persona-item-value">לדעת מי היא, להרגיש חיבור</div>
+        </div>
+      </div>
+    </div>
+    <div class="note" style="margin-top: 32px;">
+      <div class="note-title">קהל שני — מסלול ההורים (אלפא קליד)</div>
+      <div class="note-text">"<strong>רונית ואורי</strong>" — הורים בני 35-50 לילד.ה שלומד.ת באלפא קליד. רוצים שהילד יצליח — אבל מבינים שהצלחה מתחילה מהבית. אוהבים את הילד שלהם, מתוסכלים מהתקשורת, ולא תמיד על אותו הראש כהורים. תקציב: 1,000–2,000 ₪ למסלול. הכאב: "אנחנו אוהבים אבל לא מצליחים להגיע אליו/אליה." הערוץ הזה נטען דרך נאור — הוא מזמין את ההורים, הילה מרצה.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT LADDER -->
+<section class="section" style="background: var(--cream-warm);">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">חלק 3 / סולם הסדנאות</div>
+      <h2 class="section-title">4 שלבי ה<span class="italic">מסע</span></h2>
+      <p class="section-sub">סדנאות בלבד — בזום ובפרונטלי. הלקוחה מתחילה ב-147 ₪, ובסוף משקיעה בליווי אישי/זוגי של 5,997 ₪.</p>
+    </div>
+
+    <div class="ladder">
+      <!-- 1. Free Discovery -->
+      <div class="product-card">
+        <div class="product-step">1</div>
+        <div class="product-info">
+          <h3>ערב הגילוי</h3>
+          <div class="product-tagline">מוצר לידים | חינמי</div>
+          <p class="product-desc">הרצאה חודשית בזום, 75 דקות: "3 הסיבות שאת תקועה — ומה הקבלה אומרת על זה". בסוף ההרצאה — הצעת Early Bird מוגבלת ל-24 שעות למוצר חדירה.</p>
+          <div class="product-features">
+            <span class="product-feature">פעם בחודש</span>
+            <span class="product-feature">75 דקות</span>
+            <span class="product-feature">פתיחה רגשית חזקה</span>
+            <span class="product-feature">CTA לסדנת ערות</span>
+          </div>
+        </div>
+        <div class="product-pricing">
+          <div class="price-label">מחיר</div>
+          <div class="price-free">חינם</div>
+          <div class="price-eb" style="margin-top: 8px;">תמורת מייל + טלפון</div>
+        </div>
+      </div>
+
+      <!-- 2. Entry product -->
+      <div class="product-card">
+        <div class="product-step">2</div>
+        <div class="product-info">
+          <h3>ערות — מפגש הניצוץ</h3>
+          <div class="product-tagline">מוצר חדירה | פעמיים בחודש</div>
+          <p class="product-desc">סדנה חד-פעמית, 3 שעות — <strong>בזום או פרונטלי</strong>. תרגיל מעמיק לזיהוי "האני האמיתי" + הקבלה של ניצוצות הנשמה. כל מי שקנתה כאן — קל פי 10 למכור לה אחר כך את "דרך".</p>
+          <div class="product-features">
+            <span class="product-feature">3 שעות · זום/פרונטלי</span>
+            <span class="product-feature">בונוס: PDF "10 השאלות"</span>
+            <span class="product-feature">פעמיים בחודש</span>
+            <span class="product-feature">עד 30 משתתפות</span>
+          </div>
+        </div>
+        <div class="product-pricing">
+          <div class="price-label">מחיר</div>
+          <div class="price-main"><span class="currency">₪</span>197</div>
+          <div class="price-eb">Early Bird: <strong>147 ₪</strong></div>
+        </div>
+      </div>
+
+      <!-- 3. Core / Flagship -->
+      <div class="product-card">
+        <div class="product-step">3</div>
+        <div class="product-info">
+          <h3>דרך — מסלול 6 שבועות</h3>
+          <div class="product-tagline">המוצר הראשי | המנוע הכלכלי</div>
+          <p class="product-desc">6 שבועות = 6 שערים: זהות / רצון / פחד / יחסים / קריירה / יעוד. כל שבוע מפגש זום של שעתיים + קבוצת ווטסאפ פעילה + תרגול. בונוס: שיחת זום אישית 30 דקות + ספר דיגיטלי.</p>
+          <div class="product-features">
+            <span class="product-feature">6 מפגשי זום</span>
+            <span class="product-feature">קבוצת ווטסאפ</span>
+            <span class="product-feature">שיחה אישית 1:1</span>
+            <span class="product-feature">מחזור כל חודשיים</span>
+            <span class="product-feature">10 משתתפות מקסימום</span>
+          </div>
+        </div>
+        <div class="product-pricing">
+          <div class="price-label">מחיר</div>
+          <div class="price-main"><span class="currency">₪</span>1,497</div>
+          <div class="price-eb">Early Bird: <strong>1,247 ₪</strong></div>
+        </div>
+      </div>
+
+      <!-- 4. Premium 1:1 / Couple -->
+      <div class="product-card">
+        <div class="product-step">4</div>
+        <div class="product-info">
+          <h3>הולכת בדרך — ליווי אישי / זוגי</h3>
+          <div class="product-tagline">פרימיום | סלקטיבי | יחיד או זוג</div>
+          <p class="product-desc">ליווי צמוד לשלושה חודשים: 8 פגישות (בזום או פרונטלי) + ווטסאפ פתוח + תהליך עומק של פסיכולוגיה + קבלה + תיקון פנימי. אישי (1:1) או זוגי. רק 3-5 לקוחות במקביל. סלקציה — לא כל אחת מתאימה.</p>
+          <div class="product-features">
+            <span class="product-feature">8 פגישות · יחיד/זוג</span>
+            <span class="product-feature">זום או פרונטלי</span>
+            <span class="product-feature">ווטסאפ פתוח</span>
+            <span class="product-feature">3 חודשים</span>
+            <span class="product-feature">בסלקציה בלבד</span>
+          </div>
+        </div>
+        <div class="product-pricing">
+          <div class="price-label">מחיר</div>
+          <div class="price-main"><span class="currency">₪</span>5,997</div>
+          <div class="price-eb"><span class="strike">6,597 ₪</span> ב-3 תשלומים</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARENT TRACK — ALPHA KLID -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">חלק 4 / ערוץ הצמיחה</div>
+      <h2 class="section-title">מסלול ה<span class="italic">הורים</span> — אלפא קליד</h2>
+      <p class="section-sub">שיתוף פעולה עם בית הספר למוזיקה של נאור בר. נאור מזמין את ההורים — הילה מרצה. ערוץ שמביא קהל חם ומוכן, בלי עלות שיווק.</p>
+    </div>
+
+    <!-- How it works -->
+    <div class="brand-card">
+      <div class="brand-logo">
+        <div class="brand-logo-name">שורש</div>
+        <div class="brand-logo-line"></div>
+        <div class="brand-logo-method">מסע ההורות</div>
+      </div>
+      <div class="brand-details">
+        <h3>איך זה עובד</h3>
+        <div class="brand-row">
+          <div class="brand-row-label">השותפות</div>
+          <div class="brand-row-value">בית הספר אלפא קליד (נאור בר) מזמין את הורי התלמידים לסדנה. הקהל כבר שם — חם ומחובר.</div>
+        </div>
+        <div class="brand-row">
+          <div class="brand-row-label">הפורמט</div>
+          <div class="brand-row-value">6–8 מפגשים פרונטליים בבית הספר. קבוצתי — כמה משפחות יחד, חוויה משותפת.</div>
+        </div>
+        <div class="brand-row">
+          <div class="brand-row-label">תפקיד הילה</div>
+          <div class="brand-row-value">מרצה ומנחה את כל המפגשים — תקשורת הורה-ילד, גבולות מתוך אהבה, הילד כראי, שותפות זוגית בהורות.</div>
+        </div>
+        <div class="brand-row">
+          <div class="brand-row-label">המשך טבעי</div>
+          <div class="brand-row-value">בוגרי המסלול שרוצים עומק — ממשיכים לליווי זוגי פרטי ב"הולכת בדרך".</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pricing: single vs couple (Dovdevani two-option) -->
+    <div class="section-header" style="margin: 72px auto 40px;">
+      <div class="section-eyebrow">התמחור החכם</div>
+      <h2 class="section-title" style="font-size: clamp(30px, 4vw, 44px);">הורה אחד — או <span class="italic">שניכם יחד</span>?</h2>
+      <p class="section-sub">שתי אופציות בלבד (לפי דובדבני). הזוג מתומחר כך שההורה השני מצטרף כמעט במתנה — וזו הופכת לבחירה המתבקשת.</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 880px; margin: 0 auto;">
+      <!-- Single parent -->
+      <div style="background: white; border: 1px solid var(--border); border-radius: 20px; padding: 40px 32px; text-align: center;">
+        <div style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); font-weight: 600; margin-bottom: 16px;">הורה אחד</div>
+        <div class="price-main" style="font-size: 56px;"><span class="currency">₪</span>1,497</div>
+        <div class="price-eb" style="margin-top: 8px;">Early Bird: <strong>1,297 ₪</strong></div>
+        <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 14px; color: var(--text-muted);">מסלול מלא · 6–8 מפגשים · הורה אחד בחדר</div>
+      </div>
+      <!-- Couple -->
+      <div style="background: linear-gradient(135deg, var(--black) 0%, #0a0908 100%); border: 2px solid var(--pistachio); border-radius: 20px; padding: 40px 32px; text-align: center; position: relative; overflow: hidden;">
+        <div style="position: absolute; top: 18px; left: 50%; transform: translateX(-50%); background: var(--pistachio); color: var(--black); font-size: 11px; font-weight: 700; letter-spacing: 0.12em; padding: 5px 16px; border-radius: 100px;">הכי משתלם</div>
+        <div style="font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--pistachio); font-weight: 600; margin-bottom: 16px; margin-top: 18px;">זוג הורים</div>
+        <div class="price-main" style="font-size: 56px; color: var(--cream);"><span class="currency" style="color: var(--gold-light);">₪</span>1,797</div>
+        <div class="price-eb" style="margin-top: 8px; color: var(--pistachio);">Early Bird: <strong style="color: var(--gold-light);">1,597 ₪</strong></div>
+        <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(250,248,244,0.15); font-size: 14px; color: rgba(250,248,244,0.85);">רק <strong style="color: var(--pistachio);">+300 ₪</strong> להורה השני<br>= 898 ₪ לאדם — פחות ממחצית</div>
+      </div>
+    </div>
+
+    <!-- Why couple wins -->
+    <div class="note" style="max-width: 880px; margin: 32px auto 0; background: white; border-right-color: var(--pistachio-dark);">
+      <div class="note-title" style="color: var(--pistachio-dark);">למה הזוג כמעט תמיד בוחר את שניהם (הטריק של דובדבני)</div>
+      <div class="note-text">המחיר של הורה יחיד (1,497) הוא ה<strong>עוגן</strong>. ברגע שההורה השני עולה רק 300 ₪ — המוח לא חושב "האם כדאי לי לשלם עוד 300", אלא "איך אני מוותר/ת על השני בשביל 300 ₪ בלבד?". התוספת מרגישה זניחה מול הערך. כך הזוג הופך לבחירה הטבעית — וההכנסה הממוצעת למשפחה עולה.</div>
+    </div>
+
+    <!-- Closing script -->
+    <div class="scripts-grid" style="max-width: 880px; margin: 32px auto 0;">
+      <div class="script-card">
+        <span class="script-tag">תסריט סגירה / יחיד ← זוג</span>
+        <div class="script-name">"רק אני אגיע, לא בן/בת הזוג"</div>
+        <div class="script-meta">משך: 40 שניות | שיטה: עוגן + מסגור מחדש</div>
+        <div class="script-quote">
+          אני מבינה לגמרי, והרבה הורים מתחילים ככה. רק תחשבי רגע — הילד שלך לא חי עם הורה אחד, הוא חי עם <strong>שניכם</strong>. כשרק את משתנה והבית לא — הוא מקבל מסר כפול וזה מבלבל. בשביל זה בניתי את האפשרות הזוגית: ההורה השני מצטרף בתוספת של 300 ₪ בלבד — פחות ממחצית המחיר. <strong>זו לא הוצאה של עוד הורה, זו ההשקעה שגורמת לכל השאר לעבוד.</strong> נרשמת אתכם כזוג?
+        </div>
+        <div class="script-tip">⌁ סיום: שתיקה. תני להם להגיד "כן" בעצמם. אל תורידי מחיר — ההצעה כבר משתלמת.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING PRINCIPLES -->
+<section class="section" style="background: var(--cream-warm);">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">חלק 5 / עקרונות תמחור</div>
+      <h2 class="section-title">תמחור <span class="italic">פסיכולוגי</span> לפי דובדבני</h2>
+      <p class="section-sub">כל מחיר נבחר במכוון. אין מספרים עגולים. אין מחיר אחד.</p>
+    </div>
+    <div class="principle-grid">
+      <div class="principle-card">
+        <div class="principle-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <div class="principle-title">סיומת ב-7</div>
+        <div class="principle-text">כל המחירים מסתיימים ב-7: 147, 197, 1,297, 1,497, 1,597, 1,797, 5,997. דובדבני: "תמחור פסיכולוגי נכון".</div>
+      </div>
+      <div class="principle-card">
+        <div class="principle-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M12 3v18"/></svg>
+        </div>
+        <div class="principle-title">Early Bird תמיד</div>
+        <div class="principle-text">לכל מוצר יש מחיר רגיל ומחיר Early Bird מוגבל. יוצר דחיפות + מאפשר לסגור מהר.</div>
+      </div>
+      <div class="principle-card">
+        <div class="principle-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 17l10 5 10-5M2 12l10 5 10-5M12 2L2 7l10 5 10-5-10-5z"/></svg>
+        </div>
+        <div class="principle-title">סולם — לא מוצר אחד</div>
+        <div class="principle-text">מדרגות מחיר: חינם → 197 → 1,497 → 5,997, פלוס מסלול ההורים (1,497/1,797). כל מי שקנתה — קלה יותר למוצר הבא.</div>
+      </div>
+      <div class="principle-card">
+        <div class="principle-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div class="principle-title">פריסה לתשלומים</div>
+        <div class="principle-text">למוצרים מ-1,497 ומעלה — אופציית פריסה ל-3-6 תשלומים. מסיר התנגדות "יקר לי" באופן מיידי.</div>
+      </div>
+      <div class="principle-card">
+        <div class="principle-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0H5a2 2 0 0 1-2-2v-4m6 6h10a2 2 0 0 0 2-2v-4"/></svg>
+        </div>
+        <div class="principle-title">שתי אופציות — לא אחת</div>
+        <div class="principle-text">לעולם להציע 2 אפשרויות (יחיד/זוג, רגיל/פרוס). היחיד הוא העוגן שמייקר את התפיסה; הזוג הופך לבחירה המתבקשת. הלקוח בוחר "איזו" — לא "אם".</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVENUE CALC -->
+<section class="section">
+  <div class="container">
+    <div class="calc-grid">
+      <div class="calc-title">חודש <span class="gold">מלא</span> — אחרי 6 חודשי הרצה</div>
+      <div class="calc-rows">
+        <div class="calc-row">
+          <div class="calc-row-product">
+            ערות — מפגש הניצוץ
+            <small>15 משתתפות × 197 ₪</small>
+          </div>
+          <div class="calc-row-qty">15 יחידות</div>
+          <div class="calc-row-amount">2,955 ₪</div>
+        </div>
+        <div class="calc-row">
+          <div class="calc-row-product">
+            דרך — מסלול 6 שבועות
+            <small>6 משתתפות חדשות × 1,497 ₪</small>
+          </div>
+          <div class="calc-row-qty">6 חדשות</div>
+          <div class="calc-row-amount">8,982 ₪</div>
+        </div>
+        <div class="calc-row">
+          <div class="calc-row-product">
+            מסלול ההורים — אלפא קליד
+            <small>~6 משפחות × ~1,667 ₪ / מחזור חודשיים</small>
+          </div>
+          <div class="calc-row-qty">~6 משפחות</div>
+          <div class="calc-row-amount">5,000 ₪</div>
+        </div>
+        <div class="calc-row">
+          <div class="calc-row-product">
+            הולכת בדרך — ליווי 1:1
+            <small>3 לקוחות פעילות × 2,000 ₪/חודש</small>
+          </div>
+          <div class="calc-row-qty">3 פעילות</div>
+          <div class="calc-row-amount">6,000 ₪</div>
+        </div>
+      </div>
+      <div class="calc-total">
+        <div class="calc-total-label">
+          הכנסה חודשית צפויה
+          <small>אחרי 6 חודשי בנייה — שלב יציבות</small>
+        </div>
+        <div class="calc-total-amount">22,937 ₪</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS BANK -->
+<section class="section" style="background: var(--cream-warm);">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">חלק 6 / בנק תועלות</div>
+      <h2 class="section-title">7 ה<span class="italic">תועלות</span> לכל שיחת מכירה</h2>
+      <p class="section-sub">דובדבני: "הכינו מראש את בנק התועלות שלכם". זה השפה של כל מסר שיווקי.</p>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-num">01</div>
+        <div class="benefit-text">תדעי <strong>מי את באמת</strong> — לא מה אמרו לך שאת</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-num">02</div>
+        <div class="benefit-text">תקבלי <strong>את הדרך שלך</strong> — לא דרך גנרית</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-num">03</div>
+        <div class="benefit-text">תרגישי <strong>חיבור פנימי</strong> במקום ריקנות</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-num">04</div>
+        <div class="benefit-text">שילוב <strong>קבלה + פסיכולוגיה</strong> — לא בלה-בלה רוחני</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-num">05</div>
+        <div class="benefit-text"><strong>ליווי אישי</strong> — לא קורס מוקלט שאף אחת לא רואה</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-num">06</div>
+        <div class="benefit-text"><strong>קהילה תומכת</strong> של נשים על אותה הדרך</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-num">07</div>
+        <div class="benefit-text">תוצאות תוך <strong>6 שבועות</strong> — לא "שנתיים בטיפול"</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCRIPTS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">חלק 7 / תסריטי שיחה</div>
+      <h2 class="section-title">תסריטי <span class="italic">דובדבני</span> — מותאמים</h2>
+      <p class="section-sub">3 תסריטי שיחה לסגירת "דרך" (1,497 ₪) — הליבה הכלכלית.</p>
+    </div>
+
+    <div class="scripts-grid">
+      <!-- Script 1 -->
+      <div class="script-card">
+        <span class="script-tag">תסריט 1 / מינימום מקסימום</span>
+        <div class="script-name">"יקר לי" → סגירת דרך</div>
+        <div class="script-meta">משך: 60 שניות | שיטה: דלתא + שאלת השלב הבא</div>
+        <div class="script-quote">
+          אני מבינה לגמרי שזו השקעה. גם אני בודקת היטב לפני שאני משקיעה בעצמי. תגידי לי, <strong>כמה היית מוכנה להשקיע</strong> עבור היכולת לדעת בוודאות מי את ומה הדרך שלך? כי 6 שבועות זה כל מה שמפריד בינך לבין ההבנה הזו... והשקעה של 1,497 ₪ זה פחות מ-250 ₪ לשבוע, פחות מארוחה במסעדה. <strong>אני לא מזלזלת ב-250 ₪. זה מה שיפריד בינך לבין מציאת האני שלך?</strong>
+        </div>
+        <div class="script-tip">⌁ סיום: שתיקה. לפי דובדבני — שתיקה מאפשרת ללקוחה להבין בעצמה.</div>
+      </div>
+
+      <!-- Script 2 -->
+      <div class="script-card">
+        <span class="script-tag">תסריט 2 / קונצנזוס</span>
+        <div class="script-name">"צריך לחשוב" → הוכחה חברתית</div>
+        <div class="script-meta">משך: 50 שניות | שיטה: סיפור על לקוחה דומה</div>
+        <div class="script-quote">
+          אני מבינה. תקשיבי, זה מזכיר לי מישהי בשם שרון (שם בדוי) שגם היא הייתה בדיוק במקום שלך לפני 4 חודשים, גם היא ביקשה לחשוב. בסוף היא נכנסה ל"דרך", והיום היא לא מזהה את עצמה. לפני יומיים היא כתבה לי: <strong>"הילה, חבל לי שלקח לי שלושה חודשים להחליט"</strong>. אם את רוצה, אני יכולה לחבר אותך אליה לדבר?
+        </div>
+        <div class="script-tip">⌁ מומלץ: לבנות מראש 3-5 "סיפורי קונצנזוס" של לקוחות אמיתיות (עם רשות).</div>
+      </div>
+
+      <!-- Script 3 -->
+      <div class="script-card">
+        <span class="script-tag">תסריט 3 / אם אני במקומך</span>
+        <div class="script-name">סגירה רכה אבל חזקה</div>
+        <div class="script-meta">משך: 30 שניות | שיטה: כניסה לנעלי הלקוחה</div>
+        <div class="script-quote">
+          אם הייתי במקומך — הייתי שואלת את עצמי שאלה אחת: <strong>"אם לא עכשיו, אז מתי?"</strong> כי הכאב שאת מרגישה היום, הוא בדיוק אותו כאב שתרגישי בעוד שנה. ההבדל היחיד? שנה שלא חזרת לעצמך. אני אשמור לך מקום במחזור הקרוב — את רק תגידי כן.
+        </div>
+        <div class="script-tip">⌁ זהו תסריט סגירה אחרון — מפעילים אחרי שתסריטים 1+2 לא הספיקו.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE 90 DAYS -->
+<section class="section" style="background: var(--cream-warm);">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">חלק 8 / תוכנית פעולה</div>
+      <h2 class="section-title">90 הימים <span class="italic">הראשונים</span></h2>
+      <p class="section-sub">תוכנית פרקטית להשקת המותג מהיום. 3 חודשים = תזרים חיובי ראשון.</p>
+    </div>
+    <div class="timeline">
+      <div class="timeline-month">
+        <div class="timeline-num">01</div>
+        <div class="timeline-title">חודש 1<br>בניית יסודות</div>
+        <ul class="timeline-tasks">
+          <li class="timeline-task">לוגו + פלטת מותג (פיסטוק + שחור + זהב)</li>
+          <li class="timeline-task">עמוד אינסטגרם — 3 פוסטים בשבוע</li>
+          <li class="timeline-task">עמוד נחיתה ל"ערב הגילוי"</li>
+          <li class="timeline-task">רשימת תפוצה (Sender/Mailchimp)</li>
+          <li class="timeline-task">תוכן ל"ערב הגילוי" #1</li>
+          <li class="timeline-task">הכנת PDF הבונוס "10 השאלות"</li>
+        </ul>
+        <div class="timeline-goal">
+          <strong>יעד החודש</strong>
+          200 עוקבות באינסטגרם + 50 הרשמות לרשימה
+        </div>
+      </div>
+
+      <div class="timeline-month">
+        <div class="timeline-num">02</div>
+        <div class="timeline-title">חודש 2<br>השקה</div>
+        <ul class="timeline-tasks">
+          <li class="timeline-task">"ערב הגילוי" #1 — יעד 30 משתתפות</li>
+          <li class="timeline-task">השקת "ערות" — יעד 10 מכירות ×147 ₪</li>
+          <li class="timeline-task">"ערב הגילוי" #2 + "ערות" #2</li>
+          <li class="timeline-task">איסוף עדויות מ"ערות"</li>
+          <li class="timeline-task">תוכן זמיני: סטוריז יומי</li>
+          <li class="timeline-task">פתיחת קמפיין ממומן ראשון (1,000 ₪)</li>
+        </ul>
+        <div class="timeline-goal">
+          <strong>יעד החודש</strong>
+          3,000–5,000 ₪ ראשוני + 20 בוגרות "ערות"
+        </div>
+      </div>
+
+      <div class="timeline-month">
+        <div class="timeline-num">03</div>
+        <div class="timeline-title">חודש 3<br>מנוע</div>
+        <ul class="timeline-tasks">
+          <li class="timeline-task">השקת "דרך" — מחזור 1</li>
+          <li class="timeline-task">יעד: 6 משתתפות × 1,247 = 7,482 ₪</li>
+          <li class="timeline-task">השקת מסלול ההורים — אלפא קליד מחזור 1</li>
+          <li class="timeline-task">בניית 5 תסריטי שיחה מותאמים</li>
+          <li class="timeline-task">ליווי אישי/זוגי ראשון</li>
+          <li class="timeline-task">תיעוד תהליכי עבודה (SOP)</li>
+        </ul>
+        <div class="timeline-goal">
+          <strong>יעד החודש</strong>
+          8,000–12,000 ₪ + מנוע פעיל
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPORTANT NOTE about Vaat Alit -->
+<section class="section" style="padding: 60px 0;">
+  <div class="container" style="max-width: 900px;">
+    <div class="note" style="background: white; border-right-color: var(--pistachio-dark); padding: 36px;">
+      <div class="note-title" style="color: var(--pistachio-dark); font-size: 17px;">חשוב: סדנאות בלבד · ההפרדה מ"ואת עלית"</div>
+      <div class="note-text" style="font-size: 16px; line-height: 1.7;">
+        המודל מתמקד ב<strong>סדנאות בלבד</strong> — בזום ובפרונטלי, בקבוצות או ביחיד/זוג. <strong>ללא ריטריטים.</strong><br><br>
+        ריטריט "ואת עלית" שייך להלל — הילה רק מנחה בו ומקבלת תשלום בנפרד. זה <strong>לא חלק מהמודל של "הילה מרום"</strong>.<br><br>
+        מנוע הצמיחה החדש הוא <strong>השותפות עם אלפא קליד</strong>: בית הספר מביא קהל הורים חם ומוכן, בלי עלות שיווק. כל מחזור הורים מזין את הסולם — בוגרים ממשיכים לליווי זוגי פרטי, וההמלצות מביאות עוד משפחות.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA / SUMMARY -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2 class="cta-title">
+        זו לא תוכנית.<br>
+        <span class="pistachio">זה מסע.</span>
+      </h2>
+      <p class="cta-sub">
+        90 ימים — והמותג שלך פעיל.<br>
+        6 חודשים — והמנוע הכלכלי מסתובב.<br>
+        12 חודשים — ואת מקור הכנסה עצמאי.
+      </p>
+      <div class="cta-stats">
+        <div>
+          <div class="cta-stat-value">4</div>
+          <div class="cta-stat-label">סדנאות בסולם</div>
+        </div>
+        <div>
+          <div class="cta-stat-value">7</div>
+          <div class="cta-stat-label">תועלות ליבה</div>
+        </div>
+        <div>
+          <div class="cta-stat-value">22.9K</div>
+          <div class="cta-stat-label">₪ חודש מלא</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

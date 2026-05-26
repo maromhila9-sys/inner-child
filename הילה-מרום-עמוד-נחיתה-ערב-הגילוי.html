@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ערב הגילוי | הילה מרום — שיטת התיקון</title>
+<meta name="description" content="הרצאת זום חינמית: 3 הסיבות שאת תקועה — ומה הקבלה אומרת על זה. עם הילה מרום, מאמנת ומטפלת אישית.">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* פיסטוק רך ונשי - פסטל מרגיע */
+  --pistachio: #B8D49A;
+  --pistachio-soft: #D4E5BC;
+  --pistachio-pale: #E8F0D6;
+  --pistachio-mist: #F0F5E5;
+  --pistachio-deep: #7A9A5D;
+  --pistachio-shadow: #5C7A45;
+
+  /* זהב נוצץ ומוחשי */
+  --gold-bright: #F5D061;
+  --gold: #D4AF37;
+  --gold-rich: #C9A33A;
+  --gold-deep: #B8932E;
+  --gold-pale: #F5E5A0;
+  --gold-shimmer-1: #FFE89A;
+  --gold-shimmer-2: #D4AF37;
+  --gold-shimmer-3: #B8932E;
+
+  /* בסיס */
+  --black: #1C1917;
+  --black-soft: #2C2A26;
+  --cream: #FAF7F0;
+  --cream-warm: #F5EDE0;
+  --cream-blush: #F8F1E4;
+  --text: #2C2A26;
+  --text-muted: #6B6863;
+  --border: rgba(28, 25, 23, 0.08);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Heebo', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 16px;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  position: relative;
+}
+
+h1, h2, h3, h4 { font-family: 'Heebo', sans-serif; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; }
+.serif { font-family: 'Cormorant Garamond', serif; }
+
+.container { max-width: 1180px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 2; }
+
+/* ============== FALLING PETALS BACKGROUND ============== */
+.petals-bg {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+.petal {
+  position: absolute;
+  top: -40px;
+  opacity: 0;
+  will-change: transform;
+  animation: petalFall linear forwards;
+}
+.petal svg { display: block; }
+@keyframes petalFall {
+  0% {
+    opacity: 0;
+    transform: translateY(0) translateX(0) rotate(0deg);
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(50vh) translateX(40px) rotate(180deg);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) translateX(-30px) rotate(720deg);
+    opacity: 0;
+  }
+}
+.petal.variant-2 { animation-name: petalFallVar2; }
+@keyframes petalFallVar2 {
+  0% { opacity: 0; transform: translateY(0) translateX(0) rotate(0deg); }
+  10% { opacity: 0.9; }
+  50% { transform: translateY(50vh) translateX(-50px) rotate(-180deg); }
+  90% { opacity: 0.9; }
+  100% { transform: translateY(110vh) translateX(40px) rotate(-540deg); opacity: 0; }
+}
+
+/* ============== GOLD SHIMMER ============== */
+.gold-shimmer {
+  background: linear-gradient(
+    100deg,
+    var(--gold-shimmer-3) 0%,
+    var(--gold-shimmer-2) 25%,
+    var(--gold-shimmer-1) 45%,
+    #FFF6C7 50%,
+    var(--gold-shimmer-1) 55%,
+    var(--gold-shimmer-2) 75%,
+    var(--gold-shimmer-3) 100%
+  );
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: shimmerSlide 5s linear infinite;
+  filter: drop-shadow(0 0 8px rgba(245, 208, 97, 0.3));
+}
+@keyframes shimmerSlide {
+  0% { background-position: 250% 50%; }
+  100% { background-position: -250% 50%; }
+}
+
+/* ============== SOFT BREATHING GLOW ============== */
+.breath {
+  animation: breath 4s ease-in-out infinite;
+}
+@keyframes breath {
+  0%, 100% { filter: drop-shadow(0 0 12px rgba(184, 212, 154, 0.3)); }
+  50% { filter: drop-shadow(0 0 24px rgba(184, 212, 154, 0.6)); }
+}
+
+/* ============== HERO ============== */
+.hero {
+  background:
+    radial-gradient(ellipse at top right, rgba(184, 212, 154, 0.18) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom left, rgba(212, 175, 55, 0.15) 0%, transparent 50%),
+    linear-gradient(135deg, #1C1917 0%, #0d0c0a 100%);
+  color: var(--cream);
+  padding: 90px 0 110px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -20%; right: -10%;
+  width: 800px; height: 800px;
+  background: radial-gradient(circle, var(--pistachio) 0%, transparent 60%);
+  opacity: 0.2;
+  filter: blur(90px);
+  animation: floatGlow 12s ease-in-out infinite alternate;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -20%; left: -10%;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, var(--gold) 0%, transparent 60%);
+  opacity: 0.18;
+  filter: blur(80px);
+  animation: floatGlow 14s ease-in-out infinite alternate-reverse;
+}
+@keyframes floatGlow {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(30px, -20px) scale(1.1); }
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 80px;
+  align-items: center;
+  position: relative;
+  z-index: 3;
+}
+
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--pistachio); font-weight: 600;
+  padding: 10px 18px;
+  background: rgba(184, 212, 154, 0.12);
+  border: 1px solid rgba(184, 212, 154, 0.35);
+  border-radius: 100px;
+  margin-bottom: 26px;
+  backdrop-filter: blur(8px);
+}
+.hero-eyebrow svg { width: 14px; height: 14px; }
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(40px, 5.5vw, 72px);
+  font-weight: 500;
+  line-height: 1.05;
+  margin-bottom: 26px;
+  letter-spacing: -0.01em;
+}
+.hero h1 .underline {
+  color: var(--pistachio);
+  font-style: italic;
+  position: relative;
+  white-space: nowrap;
+  text-shadow: 0 0 30px rgba(184, 212, 154, 0.4);
+}
+.hero h1 .gold-text {
+  display: inline-block;
+}
+.hero-sub {
+  font-size: clamp(17px, 1.5vw, 19px);
+  color: rgba(250, 247, 240, 0.82);
+  font-weight: 300;
+  max-width: 580px;
+  margin-bottom: 32px;
+}
+.hero-info {
+  display: flex; flex-wrap: wrap; gap: 24px;
+  padding: 22px 26px;
+  background: rgba(250, 247, 240, 0.05);
+  border: 1px solid rgba(250, 247, 240, 0.12);
+  border-radius: 14px;
+  margin-bottom: 32px;
+  backdrop-filter: blur(10px);
+}
+.hero-info-item { display: flex; align-items: center; gap: 10px; font-size: 14px; color: rgba(250, 247, 240, 0.85); }
+.hero-info-item svg { width: 18px; height: 18px; color: var(--pistachio); flex-shrink: 0; }
+.hero-info-item strong { color: var(--cream); font-weight: 600; }
+
+/* ============== FORM — APPLE LIQUID GLASS (iOS 26) ============== */
+.form-card {
+  background:
+    linear-gradient(135deg,
+      rgba(255, 255, 255, 0.72) 0%,
+      rgba(255, 255, 255, 0.38) 50%,
+      rgba(255, 255, 255, 0.58) 100%);
+  backdrop-filter: blur(48px) saturate(180%) brightness(1.06);
+  -webkit-backdrop-filter: blur(48px) saturate(180%) brightness(1.06);
+  color: var(--text);
+  padding: 44px 40px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 32px;
+  position: relative;
+  isolation: isolate;
+  box-shadow:
+    /* Far drop shadow — deep floating */
+    0 50px 100px rgba(28, 25, 23, 0.32),
+    /* Closer ambient */
+    0 16px 40px rgba(28, 25, 23, 0.18),
+    /* Specular top inner highlight (liquid wet glass) */
+    inset 0 1.5px 0 rgba(255, 255, 255, 1),
+    /* Side rims */
+    inset 1.5px 0 0 rgba(255, 255, 255, 0.45),
+    inset -1.5px 0 0 rgba(255, 255, 255, 0.45),
+    /* Bottom rim */
+    inset 0 -1.5px 0 rgba(255, 255, 255, 0.3),
+    /* Soft inner glow */
+    inset 0 0 80px rgba(255, 255, 255, 0.35),
+    /* Outer iridescent halo */
+    0 0 100px rgba(212, 175, 55, 0.22);
+  animation: cardFloat 6s ease-in-out infinite;
+}
+@keyframes cardFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* Iridescent outer ring — Apple Liquid Glass signature */
+.form-card::before {
+  content: '';
+  position: absolute;
+  inset: -14px;
+  background: conic-gradient(from 0deg,
+    var(--gold-bright) 0deg,
+    var(--pistachio) 80deg,
+    rgba(255, 246, 199, 0.9) 140deg,
+    var(--gold) 200deg,
+    var(--pistachio-soft) 280deg,
+    var(--gold-bright) 360deg);
+  border-radius: 42px;
+  z-index: -1;
+  opacity: 0.45;
+  filter: blur(28px);
+  animation: irisRotate 14s linear infinite;
+}
+@keyframes irisRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Specular top sheen — natural light refraction on liquid glass */
+.form-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 75%;
+  background:
+    /* Primary highlight — soft elliptical spread from top */
+    radial-gradient(ellipse 85% 55% at 50% 0%,
+      rgba(255, 255, 255, 0.38) 0%,
+      rgba(255, 255, 255, 0.22) 18%,
+      rgba(255, 255, 255, 0.11) 38%,
+      rgba(255, 255, 255, 0.04) 62%,
+      transparent 88%),
+    /* Subtle warm tint — picks up gold halo */
+    radial-gradient(ellipse 60% 40% at 50% 5%,
+      rgba(255, 246, 220, 0.12) 0%,
+      transparent 70%);
+  border-radius: 32px 32px 0 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.9;
+  filter: blur(6px);
+  mix-blend-mode: plus-lighter;
+}
+
+/* Secondary soft highlight — adds depth, like sub-surface scattering */
+.form-card .form-content::before {
+  content: '';
+  position: absolute;
+  top: -20px; left: 30%; right: 30%;
+  height: 30px;
+  background: radial-gradient(ellipse at center,
+    rgba(255, 255, 255, 0.5) 0%,
+    transparent 70%);
+  filter: blur(8px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.form-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--black);
+  position: relative;
+  z-index: 2;
+  letter-spacing: -0.01em;
+}
+.form-sub { color: var(--text-muted); font-size: 14px; margin-bottom: 28px; position: relative; z-index: 2; }
+
+.form-row { margin-bottom: 16px; position: relative; z-index: 2; }
+.form-row label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 7px;
+  letter-spacing: 0.02em;
+}
+
+/* Inputs — Liquid Glass material */
+.form-row input {
+  width: 100%;
+  padding: 15px 18px;
+  font-family: 'Heebo', sans-serif;
+  font-size: 16px;
+  color: var(--black);
+  background:
+    linear-gradient(180deg,
+      rgba(255, 255, 255, 0.92) 0%,
+      rgba(255, 255, 255, 0.72) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 14px;
+  transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  direction: rtl;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.03),
+    0 2px 6px rgba(28, 25, 23, 0.04);
+}
+.form-row input:hover {
+  background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.82) 100%);
+  border-color: rgba(184, 212, 154, 0.5);
+}
+.form-row input:focus {
+  outline: none;
+  background: white;
+  border-color: rgba(184, 212, 154, 0.9);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    0 0 0 4px rgba(184, 212, 154, 0.22),
+    0 6px 16px rgba(184, 212, 154, 0.2);
+  transform: translateY(-1px);
+}
+.form-row input::placeholder { color: #B4B0AA; }
+
+/* CTA — Dark Liquid Glass with chromatic edge */
+.form-cta {
+  width: 100%;
+  padding: 19px 32px;
+  margin-top: 14px;
+  background:
+    linear-gradient(180deg,
+      rgba(44, 42, 38, 0.96) 0%,
+      rgba(28, 25, 23, 1) 100%);
+  color: var(--cream);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  font-family: 'Heebo', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 320ms cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+  box-shadow:
+    0 14px 36px rgba(28, 25, 23, 0.45),
+    0 0 0 1px rgba(212, 175, 55, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.35);
+}
+.form-cta::before {
+  content: '';
+  position: absolute;
+  top: 0; right: -150%;
+  width: 60%; height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(245, 208, 97, 0.45),
+    rgba(255, 246, 199, 0.7),
+    rgba(245, 208, 97, 0.45),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: right 800ms ease;
+}
+/* Specular shine on dark glass — natural light refraction */
+.form-cta::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 75%;
+  background:
+    /* Primary soft highlight from top center */
+    radial-gradient(ellipse 85% 60% at 50% 0%,
+      rgba(255, 255, 255, 0.28) 0%,
+      rgba(255, 255, 255, 0.16) 18%,
+      rgba(255, 255, 255, 0.08) 38%,
+      rgba(255, 255, 255, 0.025) 62%,
+      transparent 88%),
+    /* Warm gold tint — picks up the gold halo */
+    radial-gradient(ellipse 65% 45% at 50% 4%,
+      rgba(245, 208, 97, 0.12) 0%,
+      rgba(245, 208, 97, 0.04) 40%,
+      transparent 75%);
+  border-radius: 16px 16px 0 0;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(5px);
+  mix-blend-mode: plus-lighter;
+  opacity: 0.95;
+}
+/* Tiny rim of light along very top edge — the "wet" line */
+.form-cta {
+  /* Adds an extra-sharp top edge highlight via additional inset shadow */
+}
+.form-cta:hover::before { right: 150%; }
+.form-cta:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 22px 50px rgba(28, 25, 23, 0.55),
+    0 0 0 1px var(--gold),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+.form-cta:active { transform: translateY(-1px); }
+.form-cta:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+.form-cta-text { position: relative; z-index: 2; display: inline-flex; align-items: center; gap: 8px; }
+.form-cta svg { width: 18px; height: 18px; }
+.form-note {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-muted);
+  position: relative;
+  z-index: 2;
+}
+.form-note strong { color: var(--pistachio-deep); }
+.form-content { position: relative; z-index: 2; }
+
+/* ============== SECTIONS ============== */
+.section { padding: 100px 0; position: relative; }
+.section-header { max-width: 760px; margin: 0 auto 60px; text-align: center; }
+.section-eyebrow {
+  display: inline-block;
+  font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--gold-deep); font-weight: 700;
+  margin-bottom: 14px;
+  position: relative;
+  padding: 6px 16px;
+  background: rgba(212, 175, 55, 0.08);
+  border-radius: 100px;
+}
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 4.5vw, 52px);
+  font-weight: 500;
+  line-height: 1.1;
+  margin-bottom: 16px;
+  color: var(--black);
+}
+.section-title .italic { font-style: italic; color: var(--pistachio-deep); }
+.section-sub { font-size: 17px; color: var(--text-muted); font-weight: 300; }
+
+/* ============== PAIN POINTS ============== */
+.section.pain { background: var(--cream); }
+.pain-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.pain-card {
+  background: white;
+  padding: 28px;
+  border-radius: 18px;
+  border: 1px solid rgba(184, 212, 154, 0.25);
+  transition: all 300ms ease;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+}
+.pain-card::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 60px; height: 60px;
+  background: radial-gradient(circle, rgba(184, 212, 154, 0.2) 0%, transparent 70%);
+  transition: all 300ms ease;
+}
+.pain-card:hover {
+  border-color: var(--pistachio);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(184, 212, 154, 0.25);
+}
+.pain-card:hover::before {
+  width: 120px; height: 120px;
+}
+.pain-check {
+  width: 32px; height: 32px;
+  background: var(--pistachio-pale);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+  position: relative;
+  z-index: 2;
+}
+.pain-check svg { width: 16px; height: 16px; color: var(--pistachio-shadow); }
+.pain-text { font-size: 16px; color: var(--black); line-height: 1.6; position: relative; z-index: 2; }
+.pain-text strong { color: var(--pistachio-deep); }
+
+/* ============== BENEFITS ============== */
+.benefits-section {
+  background:
+    radial-gradient(ellipse at center top, rgba(184, 212, 154, 0.15) 0%, transparent 60%),
+    linear-gradient(180deg, var(--cream-blush) 0%, var(--pistachio-mist) 100%);
+  position: relative;
+}
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.benefit-box {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 24px;
+  position: relative;
+  border: 1px solid rgba(184, 212, 154, 0.25);
+  transition: all 400ms ease;
+  box-shadow: 0 4px 20px rgba(184, 212, 154, 0.1);
+}
+.benefit-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 60px rgba(184, 212, 154, 0.25);
+  border-color: var(--pistachio);
+}
+.benefit-num {
+  position: absolute;
+  top: -28px; right: 24px;
+  width: 60px; height: 60px;
+  background: var(--black);
+  color: var(--pistachio);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 600;
+  border: 4px solid var(--cream);
+  box-shadow: 0 8px 24px rgba(28,25,23,0.2), inset 0 0 0 1px rgba(212,175,55,0.4);
+}
+.benefit-box:nth-child(2) .benefit-num {
+  background: linear-gradient(135deg, var(--gold-bright), var(--gold));
+  color: var(--black);
+}
+.benefit-box:nth-child(3) .benefit-num {
+  background: var(--pistachio);
+  color: var(--black);
+}
+.benefit-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 20px 0 12px;
+  color: var(--black);
+}
+.benefit-desc { font-size: 15px; color: var(--text-muted); line-height: 1.7; }
+
+/* ============== ABOUT ============== */
+.section.about { background: var(--cream); }
+.about-card {
+  background: white;
+  border-radius: 28px;
+  padding: 60px;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 60px;
+  align-items: center;
+  border: 1px solid rgba(184, 212, 154, 0.2);
+  box-shadow: 0 12px 40px rgba(184, 212, 154, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+.about-card::before {
+  content: '';
+  position: absolute;
+  top: -100px; left: -100px;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(184, 212, 154, 0.15) 0%, transparent 70%);
+}
+.about-avatar {
+  aspect-ratio: 1;
+  background: linear-gradient(135deg, var(--black) 0%, var(--black-soft) 100%);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 6px rgba(184, 212, 154, 0.25),
+    0 0 0 10px rgba(212, 175, 55, 0.3),
+    0 20px 60px rgba(28,25,23,0.3);
+}
+.about-avatar::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 65% 35%, var(--pistachio) 0%, transparent 60%);
+  opacity: 0.3;
+}
+.about-avatar::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 30% 70%, var(--gold) 0%, transparent 50%);
+  opacity: 0.18;
+}
+.about-avatar-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 90px;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--cream);
+  position: relative;
+  z-index: 2;
+}
+.about-content { position: relative; z-index: 2; }
+.about-label {
+  font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold-deep); font-weight: 700;
+  margin-bottom: 8px;
+}
+.about-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 44px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: var(--black);
+}
+.about-role {
+  font-size: 17px;
+  color: var(--pistachio-deep);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.about-bio { font-size: 16px; color: var(--text); line-height: 1.75; margin-bottom: 24px; }
+.about-credentials {
+  display: flex; flex-wrap: wrap; gap: 10px;
+}
+.credential {
+  padding: 7px 16px;
+  background: var(--pistachio-pale);
+  color: var(--pistachio-shadow);
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid rgba(184, 212, 154, 0.4);
+  transition: all 200ms ease;
+}
+.credential:hover {
+  background: var(--pistachio);
+  color: var(--black);
+  transform: translateY(-2px);
+}
+
+/* ============== QUOTE ============== */
+.quote-section {
+  padding: 80px 0;
+  background: linear-gradient(180deg, var(--cream-blush) 0%, var(--pistachio-mist) 100%);
+  position: relative;
+}
+.quote {
+  max-width: 880px; margin: 0 auto;
+  text-align: center;
+  padding: 0 32px;
+  position: relative;
+}
+.quote::before {
+  content: '"';
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 180px;
+  color: var(--pistachio);
+  line-height: 1;
+  display: block;
+  margin-bottom: -50px;
+  opacity: 0.5;
+  filter: drop-shadow(0 0 20px rgba(184, 212, 154, 0.4));
+}
+.quote-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(22px, 3vw, 34px);
+  font-style: italic;
+  color: var(--black);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* ============== FAQ ============== */
+.section.faq { background: var(--cream); }
+.faq-list {
+  max-width: 860px; margin: 0 auto;
+  display: flex; flex-direction: column; gap: 14px;
+}
+.faq-item {
+  background: white;
+  border: 1px solid rgba(184, 212, 154, 0.25);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 250ms ease;
+}
+.faq-item:hover { border-color: var(--pistachio); box-shadow: 0 8px 24px rgba(184, 212, 154, 0.15); }
+.faq-item[open] {
+  border-color: var(--pistachio-deep);
+  box-shadow: 0 12px 32px rgba(184, 212, 154, 0.2);
+}
+.faq-question {
+  list-style: none;
+  padding: 24px 28px;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--black);
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px;
+  transition: color 200ms ease;
+}
+.faq-question::-webkit-details-marker { display: none; }
+.faq-question:hover { color: var(--pistachio-deep); }
+.faq-icon {
+  width: 34px; height: 34px;
+  background: var(--pistachio-pale);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: transform 300ms ease, background 200ms ease;
+}
+.faq-icon svg { width: 14px; height: 14px; color: var(--pistachio-deep); }
+.faq-item[open] .faq-icon {
+  transform: rotate(45deg);
+  background: var(--pistachio);
+}
+.faq-answer { padding: 0 28px 26px; color: var(--text-muted); font-size: 15px; line-height: 1.75; }
+
+/* ============== FINAL CTA ============== */
+.final-cta {
+  background:
+    radial-gradient(ellipse at top, rgba(184, 212, 154, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse at bottom, rgba(212, 175, 55, 0.12) 0%, transparent 60%),
+    linear-gradient(135deg, var(--black) 0%, #0a0908 100%);
+  color: var(--cream);
+  padding: 110px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.final-cta::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px; height: 900px;
+  background: radial-gradient(circle, var(--pistachio) 0%, transparent 60%);
+  opacity: 0.12;
+  filter: blur(100px);
+  animation: floatGlow 16s ease-in-out infinite alternate;
+}
+.final-cta-content { position: relative; z-index: 2; max-width: 720px; margin: 0 auto; }
+.final-cta h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 5vw, 58px);
+  font-weight: 500;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+.final-cta h2 .accent {
+  color: var(--pistachio);
+  font-style: italic;
+  text-shadow: 0 0 40px rgba(184, 212, 154, 0.5);
+}
+.final-cta-sub { font-size: 18px; color: rgba(250, 247, 240, 0.78); margin-bottom: 44px; font-weight: 300; }
+.final-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 44px;
+  background: linear-gradient(135deg, var(--pistachio-soft), var(--pistachio));
+  color: var(--black);
+  text-decoration: none;
+  border-radius: 100px;
+  font-size: 17px;
+  font-weight: 700;
+  transition: all 300ms ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(184, 212, 154, 0.4), 0 0 0 1px rgba(212, 175, 55, 0.5);
+}
+.final-cta-btn::before {
+  content: '';
+  position: absolute;
+  top: 0; right: -150%;
+  width: 50%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 246, 199, 0.7), transparent);
+  transform: skewX(-20deg);
+  transition: right 800ms ease;
+}
+.final-cta-btn:hover::before { right: 150%; }
+.final-cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 50px rgba(184, 212, 154, 0.5), 0 0 0 1px var(--gold);
+}
+.final-cta-btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+.final-cta-btn svg { width: 18px; height: 18px; }
+
+.urgency {
+  display: inline-flex; align-items: center; gap: 10px;
+  margin-top: 32px;
+  padding: 12px 22px;
+  background: rgba(212, 175, 55, 0.14);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: 100px;
+  font-size: 14px;
+  color: var(--gold-pale);
+  backdrop-filter: blur(8px);
+}
+.urgency svg { width: 16px; height: 16px; }
+
+/* ============== FOOTER ============== */
+.footer {
+  background: #0a0908;
+  color: rgba(250, 247, 240, 0.5);
+  padding: 32px 0;
+  text-align: center;
+  font-size: 13px;
+}
+.footer strong { color: var(--pistachio); font-weight: 600; }
+
+/* ============== SUCCESS STATE ============== */
+.form-success { display: none; text-align: center; padding: 20px 0; }
+.form-success.active { display: block; animation: fadeInUp 500ms ease; }
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.form-success-icon {
+  width: 72px; height: 72px;
+  background: linear-gradient(135deg, var(--pistachio-pale), var(--pistachio));
+  border-radius: 50%;
+  margin: 0 auto 18px;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 12px 32px rgba(184, 212, 154, 0.4);
+}
+.form-success-icon svg { width: 36px; height: 36px; color: var(--black); }
+.form-success h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  margin-bottom: 8px;
+  color: var(--black);
+}
+.form-success p { color: var(--text-muted); font-size: 14px; }
+
+/* ============== RESPONSIVE ============== */
+@media (max-width: 980px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+  .benefits-grid { grid-template-columns: 1fr; }
+  .about-card { grid-template-columns: 1fr; padding: 36px; gap: 32px; text-align: center; }
+  .about-avatar { max-width: 200px; margin: 0 auto; }
+  .about-credentials { justify-content: center; }
+  .section { padding: 60px 0; }
+  .form-card { padding: 32px 24px; }
+  .hero { padding: 60px 0 80px; }
+  .quote-text { font-size: 22px; }
+}
+
+@media (max-width: 560px) {
+  .hero-info { flex-direction: column; gap: 14px; }
+  .about-name { font-size: 32px; }
+  .benefit-num { width: 50px; height: 50px; font-size: 26px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after { transition: none !important; animation: none !important; }
+  .petal { display: none !important; }
+}
+
+*:focus-visible { outline: 2px solid var(--pistachio-deep); outline-offset: 2px; border-radius: 4px; }
+</style>
+</head>
+<body>
+
+<!-- FALLING PETALS BACKGROUND -->
+<div class="petals-bg" id="petalsBg" aria-hidden="true"></div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4-6.2-4.6-6.2 4.6 2.4-7.4L2 9.4h7.6z"/></svg>
+          ערב הגילוי | חינמי
+        </div>
+        <h1>
+          <span class="serif">גלי את 3 הסיבות</span><br>
+          ש<span class="underline">את תקועה</span> —<br>
+          <span class="serif gold-text gold-shimmer">ומה הקבלה אומרת על זה</span>
+        </h1>
+        <p class="hero-sub">
+          הרצאת זום של 75 דקות עם הילה מרום — מאמנת ומטפלת אישית, מומחית בשילוב חכמת הקבלה והפסיכולוגיה היהודית. בלי בלה-בלה רוחני. רק כלים פרקטיים שאפשר להתחיל ליישם הערב.
+        </p>
+        <div class="hero-info">
+          <div class="hero-info-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            <span><strong>יום שלישי</strong> 16.6.2026</span>
+          </div>
+          <div class="hero-info-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span><strong>21:00</strong> | 75 דקות</span>
+          </div>
+          <div class="hero-info-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M2 10h20"/></svg>
+            <span>זום | <strong>חינם</strong></span>
+          </div>
+          <div class="hero-info-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+            <span>לנשים | <strong>מקומות מוגבלים</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div id="register">
+        <div class="form-card">
+          <div class="form-content">
+            <div class="form-title">שמרי לי מקום</div>
+            <div class="form-sub">פרטים יישלחו אלייך לפני ההרצאה. לא נעמיס לך מיילים.</div>
+            <form id="leadForm" novalidate>
+              <div class="form-row">
+                <label for="name">שם פרטי</label>
+                <input type="text" id="name" name="name" placeholder="הילה" required autocomplete="given-name">
+              </div>
+              <div class="form-row">
+                <label for="email">אימייל</label>
+                <input type="email" id="email" name="email" placeholder="name@email.com" required autocomplete="email" dir="ltr" style="text-align:right">
+              </div>
+              <div class="form-row">
+                <label for="phone">טלפון נייד</label>
+                <input type="tel" id="phone" name="phone" placeholder="050-0000000" required autocomplete="tel" dir="ltr" style="text-align:right">
+              </div>
+              <button type="submit" class="form-cta">
+                <span class="form-cta-text">
+                  שמרי לי מקום בערב הגילוי
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+                </span>
+              </button>
+              <div class="form-note">
+                בלחיצה את מאשרת קבלת לינק להרצאה + תוכן רלוונטי. אפשר להסיר הרשמה <strong>תמיד</strong>.
+              </div>
+            </form>
+          </div>
+          <div class="form-success" id="formSuccess">
+            <div class="form-success-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <h3>נרשמת בהצלחה ✦</h3>
+            <p>שלחנו לך הודעה למייל ולווטסאפ עם כל הפרטים. נתראה בקרוב.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pain Points -->
+<section class="section pain">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">למי זה מתאים</div>
+      <h2 class="section-title">ערב הגילוי הוא בשבילך אם<span class="italic">...</span></h2>
+      <p class="section-sub">מסמני לעצמך כל משפט שמדבר אלייך. אם 3 ומעלה — את במקום הנכון.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></div>
+        <div class="pain-text">את מרגישה <strong>תקועה</strong> בחיים, גם אם הם נראים טוב מבחוץ</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></div>
+        <div class="pain-text">יש לך הכל, אבל בפנים את מרגישה ש<strong>משהו חסר</strong></div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></div>
+        <div class="pain-text">את לא יודעת <strong>מה הדרך שלך</strong> ומה היעוד האמיתי שלך</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></div>
+        <div class="pain-text">את עייפה מ"אימון" <strong>שטחי</strong> שלא מצליח להגיע לעומק</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></div>
+        <div class="pain-text">את מחפשת <strong>חיבור עמוק</strong> לעצמך — לא רק לעבודה ולמשפחה</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></div>
+        <div class="pain-text">את מתעניינת ב<strong>קבלה</strong> אבל לא מצאת מסגרת שמדברת אלייך באמת</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Benefits -->
+<section class="section benefits-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">מה תקבלי בערב הגילוי</div>
+      <h2 class="section-title">3 דברים שיישארו אתך <span class="italic">לכל החיים</span></h2>
+      <p class="section-sub">לא הרצאה תיאורטית. כלים פרקטיים שאפשר להתחיל ליישם הערב.</p>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-box">
+        <div class="benefit-num">1</div>
+        <div class="benefit-title">3 הסיבות לתקיעות</div>
+        <div class="benefit-desc">תלמדי לזהות את 3 הסיבות המרכזיות שגורמות לך להרגיש תקועה — בגוף, בנפש ובנשמה — לפי שילוב של חכמת הקבלה והפסיכולוגיה היהודית.</div>
+      </div>
+      <div class="benefit-box">
+        <div class="benefit-num">2</div>
+        <div class="benefit-title">כלי קבלי-פסיכולוגי</div>
+        <div class="benefit-desc">תקבלי תרגיל מעמיק לזיהוי "האני האמיתי" שלך — מבוסס על תורת ניצוצות הנשמה בשילוב פסיכולוגיה חיובית. תרגיל שאת מבצעת איתי בזמן ההרצאה.</div>
+      </div>
+      <div class="benefit-box">
+        <div class="benefit-num">3</div>
+        <div class="benefit-title">בונוס: PDF במתנה</div>
+        <div class="benefit-desc">בסוף ההרצאה תקבלי מצגת מלאה + תרגיל ראשון לעבוד עליו לבד בבית, ובנוסף הזמנה לקבוצת הווטסאפ הסגורה של הבוגרות.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Quote -->
+<section class="quote-section">
+  <div class="container">
+    <div class="quote">
+      <p class="quote-text">
+        "יש לי הכל מבחוץ — אבל מבפנים אני לא יודעת מי אני באמת, מה הדרך שלי, ואיך לחיות בכנות עם עצמי."
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- About Hila -->
+<section class="section about">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">מי מנחה את הערב</div>
+      <h2 class="section-title">היכרות עם <span class="italic">הילה מרום</span></h2>
+    </div>
+    <div class="about-card">
+      <div class="about-avatar" aria-hidden="true">
+        <span class="about-avatar-text">ה</span>
+      </div>
+      <div class="about-content">
+        <div class="about-label">המנחה</div>
+        <h3 class="about-name">הילה מרום</h3>
+        <div class="about-role">מאמנת ומטפלת אישית | שיטת התיקון</div>
+        <p class="about-bio">
+          אני מלווה נשים במסע מציאת האני האמיתי, היעוד והתיקון הפנימי, בשילוב חכמת הקבלה והפסיכולוגיה היהודית. הגישה שלי היא מעשית, חמה ועמוקה — בלי לוותר על כלים פרקטיים שאפשר להתחיל ליישם מיד. אם את מרגישה תקועה ומחפשת את הדרך שלך — את במקום הנכון.
+        </p>
+        <div class="about-credentials">
+          <span class="credential">קבלה</span>
+          <span class="credential">פסיכולוגיה חיובית</span>
+          <span class="credential">NLP</span>
+          <span class="credential">טיפול זוגי</span>
+          <span class="credential">מנחת ריטריטים</span>
+          <span class="credential">ליווי אישי 1:1</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">שאלות נפוצות</div>
+      <h2 class="section-title">לפני שתלחצי על <span class="italic">"שמרי לי מקום"</span></h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-question">
+          <span>כמה זמן ההרצאה ומתי בדיוק?</span>
+          <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="faq-answer">75 דקות של תוכן צפוף + 15 דקות שאלות ותשובות. ההרצאה הקרובה ביום שלישי 16.6.2026 ב-21:00. כל חודש יש הרצאה חדשה — אם החודש לא מתאים, נשמור לך מקום בבאה.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-question">
+          <span>האם זה באמת חינמי? מה הקאץ'?</span>
+          <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="faq-answer">כן, ערב הגילוי לחלוטין חינמי. בסוף ההרצאה אציע לך הזדמנות להמשיך לסדנה מעמיקה יותר ("ערות" — 197 ₪) — בלי לחץ. גם אם תבחרי לא להמשיך, תקבלי ערך אמיתי בערב הזה.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-question">
+          <span>אצטרך להופיע במצלמה או לדבר?</span>
+          <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="faq-answer">לא חובה. את יכולה לבחור להופיע במצלמה ולשתף, או רק להקשיב ולכבות מצלמה. רוב הנשים מתחילות מאחורי המצלמה — וזה לגמרי בסדר.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-question">
+          <span>אני לא דתייה / לא חרדית. זה בשבילי?</span>
+          <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="faq-answer">לחלוטין. השיטה מתאימה לנשים מסורתיות, דתל"שיות, מתחזקות וגם חילוניות עם פתיחות לרוחניות. אני לא מטיפה — אני מלמדת. את לוקחת מהתוכן את מה שמתאים לך.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-question">
+          <span>יהיה תיעוד אם אפספס?</span>
+          <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="faq-answer">כל המשתתפות הרשומות מקבלות גישה להקלטה ל-7 ימים אחרי. אז גם אם פספסת, את לא מפסידה. (טיפ: התרגיל הפעיל באמצע ההרצאה הכי עוצמתי כשעושים אותו חי).</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-question">
+          <span>איך מקבלים את לינק הזום?</span>
+          <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="faq-answer">מיד אחרי ההרשמה תקבלי הודעת אישור למייל ולווטסאפ. יום לפני ההרצאה — תזכורת. שעה לפני — לינק זום מוכן לשימוש.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta">
+  <div class="container">
+    <div class="final-cta-content">
+      <h2>
+        <span class="serif">75 דקות שיכולות לשנות</span><br>
+        <span class="accent serif">את כל הדרך שלך</span>
+      </h2>
+      <p class="final-cta-sub">
+        אם לא עכשיו, אז מתי?<br>
+        ההרצאה הבאה ביום שלישי. המקומות הולכים מהר.
+      </p>
+      <a href="#register" class="final-cta-btn">
+        שמרי לי מקום עכשיו
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      </a>
+      <div class="urgency">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        נותרו <strong style="color:var(--gold-pale); margin: 0 4px;">12</strong> מקומות בהרצאה הקרובה
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <strong>הילה מרום</strong> — שיטת התיקון | מסע מציאת האני
+    <div style="margin-top: 6px; font-size: 12px;">
+      maromhila9@gmail.com
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ============ FALLING PETALS / LEAVES ============ */
+(function() {
+  const petalsBg = document.getElementById('petalsBg');
+  if (!petalsBg) return;
+
+  // SVG variants — leaves only, varied shapes and shades
+  const svgs = [
+    // 1. Classic almond leaf with vein - medium pistachio
+    `<svg viewBox="0 0 24 24" width="22" height="22" fill="#B8D49A" opacity="0.7">
+      <path d="M12 2 C 16 5, 19 10, 17 16 C 16 20, 13 22, 12 22 C 11 22, 8 20, 7 16 C 5 10, 8 5, 12 2 Z"/>
+      <path d="M12 4 L 12 20" stroke="#7A9A5D" stroke-width="0.6" fill="none" opacity="0.5"/>
+    </svg>`,
+    // 2. Pale leaf - softer shade
+    `<svg viewBox="0 0 24 24" width="18" height="18" fill="#D4E5BC" opacity="0.6">
+      <path d="M12 2 C 16 5, 19 10, 17 16 C 16 20, 13 22, 12 22 C 11 22, 8 20, 7 16 C 5 10, 8 5, 12 2 Z"/>
+    </svg>`,
+    // 3. Olive leaf - elongated and slim with vein
+    `<svg viewBox="0 0 24 30" width="14" height="24" fill="#B8D49A" opacity="0.65">
+      <path d="M12 1 C 17 8, 18 18, 13 28 C 12 29, 12 29, 11 28 C 6 18, 7 8, 12 1 Z"/>
+      <path d="M12 4 L 12 26" stroke="#7A9A5D" stroke-width="0.5" fill="none" opacity="0.45"/>
+    </svg>`,
+    // 4. Rounded leaf - softer, lighter
+    `<svg viewBox="0 0 24 24" width="16" height="16" fill="#C7DCAB" opacity="0.55">
+      <path d="M12 3 C 18 4, 21 9, 19 15 C 17 20, 13 22, 12 22 C 11 22, 7 20, 5 15 C 3 9, 6 4, 12 3 Z"/>
+    </svg>`,
+    // 5. Tiny leaf - simple
+    `<svg viewBox="0 0 24 24" width="12" height="12" fill="#B8D49A" opacity="0.55">
+      <path d="M12 2 C 16 5, 19 10, 17 16 C 16 20, 13 22, 12 22 C 11 22, 8 20, 7 16 C 5 10, 8 5, 12 2 Z"/>
+    </svg>`
+  ];
+
+  function rand(min, max) { return Math.random() * (max - min) + min; }
+
+  function createPetal() {
+    const petal = document.createElement('div');
+    petal.className = 'petal' + (Math.random() > 0.5 ? ' variant-2' : '');
+    petal.innerHTML = svgs[Math.floor(Math.random() * svgs.length)];
+
+    const startX = rand(0, 100);
+    const duration = rand(12, 22);
+    const scale = rand(0.6, 1.4);
+    const delay = rand(0, 2);
+
+    petal.style.left = startX + '%';
+    petal.style.animationDuration = duration + 's';
+    petal.style.animationDelay = delay + 's';
+    petal.style.transform = `scale(${scale})`;
+
+    petalsBg.appendChild(petal);
+
+    setTimeout(() => petal.remove(), (duration + delay + 1) * 1000);
+  }
+
+  // Initial burst (sparse)
+  for (let i = 0; i < 6; i++) {
+    setTimeout(createPetal, i * 400);
+  }
+  // Continuous creation - gentle pace
+  setInterval(createPetal, 1800);
+})();
+
+/* ============ FORM HANDLER ============ */
+document.getElementById('leadForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+
+  if (!name || !email || !phone) {
+    alert('נראה שחסרו פרטים — מלאי שם, אימייל וטלפון.');
+    return;
+  }
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    alert('האימייל לא נראה תקין. בדקי שוב.');
+    return;
+  }
+
+  const phoneClean = phone.replace(/[\s-]/g, '');
+  if (!/^0[2-9]\d{7,8}$/.test(phoneClean)) {
+    alert('הטלפון לא נראה תקין. הזיני מספר ישראלי (לדוגמה: 050-1234567).');
+    return;
+  }
+
+  console.log('Lead captured:', { name, email, phone });
+
+  document.querySelector('.form-content').style.display = 'none';
+  document.getElementById('formSuccess').classList.add('active');
+  document.getElementById('register').scrollIntoView({ behavior: 'smooth', block: 'center' });
+});
+</script>
+
+</body>
+</html>
